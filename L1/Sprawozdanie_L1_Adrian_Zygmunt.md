@@ -1,4 +1,4 @@
-**Przedmiot:** Uczenie głębokie w systemach rozpoznawania i przetwarzania mowy
+**Przedmiot:** Uczenie głębokie w systemach rozpoznawania obiektów
 **Zajęcia nr / temat:** 01 
 **Autor / grupa:** Adrian Zygmutn GL 5.04
 **Data:** 15.10.2026
