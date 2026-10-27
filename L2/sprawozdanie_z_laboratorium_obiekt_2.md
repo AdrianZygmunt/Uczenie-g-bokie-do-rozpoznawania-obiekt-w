@@ -13,7 +13,7 @@ Celem ćwiczenia jest wzięcie klasyfikatora obrazów (MLP dla zbioru FashionMNI
   Model: Wielowarstwowy perceptron (MLP) z dwiema warstwami ukrytymi (256, 128 neuronów) oraz konfigurowalnymi przełącznikami dla warstw BatchNorm i Dropout.
 - **Najważniejsze fragmenty kodu:** 
   Zaimplementowano uniwersalną funkcję run_training, testującą wybrane warianty. Kod znajduje się w repozytorium GitHub:
-  [link do repozytorium - [https://github.com/AdrianZygmunt/Uczenie-Glebokie-L2](https://github.com/AdrianZygmunt/Uczenie-g-bokie-do-rozpoznawania-obiekt-w/tree/main/L2)
+  https://github.com/AdrianZygmunt/Uczenie-g-bokie-do-rozpoznawania-obiekt-w/tree/main/L2
 - **Konfiguracja (parametry, dane):**
   Zbiór danych: FashionMNIST (Trening: 60000, Test: 10000).
   Parametry optymalizacji: Liczba epok: 10, Batch size: 128 (trening) / 256 (test), Optymalizator: Adam.
