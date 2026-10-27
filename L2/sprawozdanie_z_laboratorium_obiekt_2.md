@@ -4,7 +4,7 @@
 **Data:** 21.10.2026
 
 ## 1. Cel ćwiczenia
-Celem ćwiczenia jest wzięcie klasyfikatora obrazów (MLP dla zbioru FashionMNIST) z laboratorium 1 jako punktu odniesienia (baseline) oraz poprawa jego jakości i zdolności do generalizacji. Sprawdzone zostaną metody regularyzacji i poprawy procesu uczenia, takie jak: augmentacja danych, normalizacja wsadowa (BatchNorm) oraz Dropout. Celem dodatkowym jest przeanalizowanie wpływu wartości współczynnika uczenia (Learning Rate) na dokładność klasyfikatora (accuracy).
+Celem ćwiczenia jest wzięcie klasyfikatora obrazów (MLP dla zbioru FashionMNIST) z laboratorium 1 jako punktu odniesienia (baseline) oraz poprawa jego jakości i zdolności do generalizacji. Sprawdzone zostaną metody regularyzacji i poprawy procesu uczenia, takie jak: augmentacja danych, BatchNorm oraz Dropout. Celem dodatkowym jest przeanalizowanie wpływu wartości współczynnika uczenia Learning Rate na dokładność klasyfikatora (accuracy).
 
 ## 2. Metoda i implementacja
 
@@ -12,7 +12,7 @@ Celem ćwiczenia jest wzięcie klasyfikatora obrazów (MLP dla zbioru FashionMNI
   Środowisko Python, biblioteki: PyTorch, torchvision, matplotlib. 
   Model: Wielowarstwowy perceptron (MLP) z dwiema warstwami ukrytymi (256, 128 neuronów) oraz konfigurowalnymi przełącznikami dla warstw BatchNorm i Dropout.
 - **Najważniejsze fragmenty kodu:** 
-  Zaimplementowano uniwersalną funkcję `run_training`, testującą wybrane warianty. Kod znajduje się w repozytorium GitHub:
+  Zaimplementowano uniwersalną funkcję run_training, testującą wybrane warianty. Kod znajduje się w repozytorium GitHub:
   [link do repozytorium - https://github.com/AdrianZygmunt/Uczenie-Glebokie-L2
 - **Konfiguracja (parametry, dane):**
   Zbiór danych: FashionMNIST (Trening: 60000, Test: 10000).
@@ -54,14 +54,14 @@ b) Wykres wpływu współczynnika uczenia na Accuracy (skala logarytmiczna):
 ## 4. Analiza i interpretacja
 Zgodnie z oczekiwaniami, model Baseline szybko zapamiętuje dane treningowe, co uwidacznia się rosnącą przerwą między błędem na zbiorze testowym a treningowym (0.1680) - jest to klasyczny objaw przeuczenia (overfittingu).
 Dodawanie poszczególnych elementów wpłynęło na proces następująco:
-*   **BatchNorm** poprawił ogólne accuracy (89.16%), ale przerwa (przeuczenie) nadal pozostała wysoka (0.1413).
+*   **BatchNorm** poprawił ogólne accuracy (89.16%), ale przeuczenie nadal pozostała wysoka (0.1413).
 *   **Dropout** znacznie zredukował przeuczenie (przerwa spadła do 0.0446), utrzymując wysoką dokładność na teście (88.14%).
-*   **Wariant ulepszony (Augmentacja + BN + Dropout)** całkowicie zniwelował przeuczenie (przerwa -0.1105). Wartość ujemna bierze się stąd, że w trybie `eval()` podczas testowania sieć nie używa już augmentacji i dropoutu, przez co zadanie jest dla niej łatwiejsze niż mocno zniekształcony zbiór treningowy.
+*   **Wariant ulepszony (Augmentacja + BN + Dropout)** całkowicie zniwelował przeuczenie (-0.1105). Wartość ujemna bierze się stąd, że w trybie eval() podczas testowania sieć nie używa już augmentacji i dropoutu, przez co zadanie jest dla niej łatwiejsze niż mocno zniekształcony zbiór treningowy.
 
 Przegląd współczynnika uczenia (LR) udowodnił, że 1e-3 to optymalna wartość dla optymalizatora Adam w tej architekturze. Próba użycia LR=0.1 całkowicie uniemożliwia trening sieci.
 
 ## 5. Wnioski
 1. Użycie mechanizmów regularyzacji (Dropout) oraz augmentacji danych drastycznie ogranicza zdolność sieci do bezmyślnego zapamiętywania (overfittingu), wymuszając skupienie na istotnych cechach obrazu.
-2. Silna regularyzacja przy krótkim budżecie epok (10 epok) potrafi spowolnić przyrost `accuracy`, ponieważ zadanie treningowe staje się o wiele trudniejsze. Przy większym budżecie epok "Najlepszy" model najprawdopodobniej prześcignąłby Baseline.
-3. Współczynnik uczenia (Learning Rate) to najbardziej krytyczny hiperparametr. Dobór złego LR (np. zbyt dużego) powoduje wybuch lub skoki funkcji kosztu, skutkując modelem zgadującym klasy całkowicie losowo (accuracy 10% dla 10 klas równa się ślepemu trafowi). 
-4. Hipotezy badawcze w pełni się potwierdziły - przeuczenie zostało skutecznie zminimalizowane za pomocą wprowadzonych na zajęciach metod.
+2. Silna regularyzacja przy krótkim budżecie epok (10 epok) potrafi spowolnić przyrost accuracy, ponieważ zadanie treningowe staje się o wiele trudniejsze. Przy większym budżecie epok "Najlepszy" model najprawdopodobniej prześcignąłby Baseline.
+3. Współczynnik uczenia to najbardziej krytyczny hiper parametr. Dobór złego LR (np. zbyt dużego) powoduje skoki funkcji kosztu, skutkując modelem zgadującym klasy całkowicie losowo (accuracy 10% dla 10 klas równa się ślepemu trafowi). 
+4. Hipotezy badawcze w pełni się potwierdziły - przeuczenie zostało skutecznie zminimalizowane za pomocą wprowadzonych.
