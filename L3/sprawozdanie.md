@@ -9,7 +9,7 @@ Celem ćwiczenia było skonfigurowanie i zweryfikowanie kompletnego potoku danyc
 ## 2. Metoda i implementacja
 
 - **Wykorzystane narzędzia:** PyTorch, torchvision, matplotlib, pandas
-- **Najważniejsze fragmenty kodu:** Wklej githuba
+- **Najważniejsze fragmenty kodu:** https://github.com/AdrianZygmunt/Uczenie-g-bokie-do-rozpoznawania-obiekt-w/tree/main/L3
 - **Konfiguracja (parametry, dane):**
   Zbiór wejściowy z Google Drive (zdjęcia psów i kotów). Zbiór podzielono na część treningową (80%) i walidacyjną (20%). Opracowano potok ewaluacyjny (Resize 128x128, ToTensor, Normalize) oraz potok treningowy z dodaną augmentacją. Rozmiar paczki (batch_size) wynosił 16.
 - **Uzasadnienie augmentacji:** W zbiorze treningowym zastosowano `RandomHorizontalFlip`, losowy obrót do 15 stopni (`RandomRotation`) oraz lekkie zmiany jasności i kontrastu (`ColorJitter`). Operacje te wymuszają różnorodność próbek bez wpływu na klasę – odbity lustrzanie, przyciemniony czy obrócony kot to wciąż ten sam obiekt z klasą "koty".
