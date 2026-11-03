@@ -35,8 +35,8 @@ Celem ćwiczenia było skonfigurowanie i zweryfikowanie kompletnego potoku danyc
 
 ![Podgląd zdjęć](Wyniki.png)
 
-* **Przykładowa paczka danych (góra):** 16 losowych zdjęć wraz z etykietami, pokazanych dokładnie w takiej postaci, w jakiej trafią do sieci na etapie treningu. Widać na nich wyraźnie efekty modyfikacji, na przykład obrócone kadry[cite: 8].
-* **Wpływ augmentacji na jedno zdjęcie (dół):** Oryginał i cztery zmienione wersje tego samego zdjęcia. Zestawienie to dobrze pokazuje, że nakładane na obraz zmiany są zróżnicowane i losowe, ale zdjęcie nie traci przez to sensu – na każdej z wersji wciąż bez problemu widać kota, więc klasa obrazu pozostaje w 100% prawidłowa[cite: 8].
+* **Przykładowa paczka danych (góra):** 16 losowych zdjęć wraz z etykietami, pokazanych dokładnie w takiej postaci, w jakiej trafią do sieci na etapie treningu. Widać na nich wyraźnie efekty modyfikacji, na przykład obrócone kadry.
+* **Wpływ augmentacji na jedno zdjęcie (dół):** Oryginał i cztery zmienione wersje tego samego zdjęcia. Zestawienie to dobrze pokazuje, że nakładane na obraz zmiany są zróżnicowane i losowe, ale zdjęcie nie traci przez to sensu – na każdej z wersji wciąż bez problemu widać kota, więc klasa obrazu pozostaje w 100% prawidłowa.
 
 ## 4. Analiza i interpretacja
 Wyświetlenie w notatniku poszczególnych tensorów oraz siatki zdjęć wyczerpująco potwierdza poprawność zaimplementowanego potoku. Odpowiednie kroki normalizujące przesunęły wartości piskeli do oczekiwanego zakresu [-1, 1], co jest konieczne dla poprawnego działania większości modeli głębokich. Przetestowanie augmentacji na pojedynczej próbce dowodzi, że funkcja odpowiednio wstrzykuje szum rotacyjny i zmianę balansu kolorów bez negatywnego wpływu na interpretację zdjęcia dla ludzkiego oka.
