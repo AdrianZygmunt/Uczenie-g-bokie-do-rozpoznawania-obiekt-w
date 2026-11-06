@@ -8,6 +8,7 @@ Celem ćwiczenia było wytrenowanie sieci wielowarstwowego perceptronu (MLP) ora
 
 ## 2. Metoda i implementacja
 - **Wykorzystane narzędzia i sprzęt:** Python, PyTorch, torchvision, matplotlib, środowisko Google Colab z akceleratorem GPU: **Tesla T4**.
+- **Kod** https://github.com/AdrianZygmunt/Uczenie-g-bokie-do-rozpoznawania-obiekt-w/tree/main/L4
 - **Konfiguracja (CFG):** Oba modele zostały wytrenowane przy użyciu tej samej konfiguracji: 
   - `epochs`: 10, `lr`: 1e-3, `batch_size`: 128, `n_val`: 5000, `augment`: False, `seed`: 42.
 - **Modele:**
