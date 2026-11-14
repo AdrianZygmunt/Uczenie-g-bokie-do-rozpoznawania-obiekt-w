@@ -1,4 +1,4 @@
-**Przedmiot:** Uczenie głębokie w systemach rozpoznawania i przetwarzania mowy
+**Przedmiot:** Uczenie głębokie w systemach rozpoznawania obiektów
 **Zajęcia nr / temat:** 4 / Splotowe sieci neuronowe (CNN) - porównanie z MLP na zbiorze CIFAR-10
 **Autor / grupa:** Adrian Zygmunt GL 5.4
 **Data:** 4.11.2026
