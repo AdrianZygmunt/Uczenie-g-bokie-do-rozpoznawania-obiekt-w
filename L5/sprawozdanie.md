@@ -17,7 +17,7 @@ Celem ćwiczenia było zbadanie działania warstwy splotowej na obrazie w skali 
   - **Sobel X** ($3\times3$): Detekcja krawędzi pionowych.
   - **Sharpen** ($3\times3$): Wyostrzanie lokalnego kontrastu.
   - **Blur (Box)** ($3\times3$): Wygładzanie obrazu (uśrednianie z wagami $\frac{1}{9}$).
-
+- **Kod:** https://github.com/AdrianZygmunt/Uczenie-g-bokie-do-rozpoznawania-obiekt-w/tree/main/L5
 ## 3. Wyniki
 
 ### 3.1. Porównanie wymiarów ze wzorem
