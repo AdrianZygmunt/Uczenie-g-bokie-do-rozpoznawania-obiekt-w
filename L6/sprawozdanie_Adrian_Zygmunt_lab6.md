@@ -14,7 +14,7 @@ Celem ćwiczenia było zbudowanie pełnej splotowej sieci neuronowej (CNN) na zb
   - `avg` – `AvgPool2d(2)`,
   - `stride` – dodatkowa warstwa `Conv 3×3, stride=2, padding=1 → BatchNorm → ReLU`.
 - **Trening:** Optymalizator Adam (lr = 1e-3), 6 epok, rozmiar paczki (batch size) 128, funkcja straty `CrossEntropyLoss`, stałe ziarno losowości (seed = 42) ustawiane przed każdym modelem, brak augmentacji danych. Wszystkie ustawienia poza metodą redukcji były identyczne dla każdego wariantu.
-- **Kod:** Wklej link do GitHuba
+- **Kod:** https://github.com/AdrianZygmunt/Uczenie-g-bokie-do-rozpoznawania-obiekt-w/tree/main/L6
 
 ## 3. Wyniki
 
